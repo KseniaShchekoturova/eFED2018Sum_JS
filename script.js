@@ -1,16 +1,3 @@
-function countWords(str) {
-  if (str==''){return 0}
-  var arr = str.split(' ');
-  var i = 0;
-  while (i<arr.length){
-    if (arr[i].replace(' ','') == ''){
-		arr.splice(i, 1);  
-    }else{
-		i++;
-	}
-  }
-  return arr.length;
-}
 
 function countChar(Str,symb){
   var entrNum = 0, i = 0;
