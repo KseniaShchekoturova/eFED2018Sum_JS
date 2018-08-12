@@ -1,3 +1,17 @@
+function countWords(str) {
+  if (str==''){return 0}
+  var arr = str.split(' ');
+  var i = 0;
+  while (i<arr.length){
+    if (arr[i].replace(' ','') == ''){
+		arr.splice(i, 1);  
+    }else{
+		i++;
+	}
+  }
+  return arr.length;
+}
+
 function countChar(Str,symb){
   var entrNum = 0, i = 0;
   N = Str.length;
@@ -65,9 +79,11 @@ function chessBoard(w,h){
     for (j = 0; j < w; j++) {
 		ch = ~ch;
 		if(ch){
-			Str = Str + '#';
+			// Str = Str + '#';
+			Str+='#';
 		}else{
-			Str = Str + ' ';
+			// Str = Str + ' ';
+			Str+=' ';
 		}      
     }
 	Str = Str + '\n';
@@ -96,7 +112,7 @@ function makeArray(elStart,elFinish,step){
 		while(elStart<=elFinish){
 			Arr[i] = elStart;
 			i++;
-			elStart = elStart + step;
+			elStart+=step;
 		}	
 	}
 	else{
@@ -106,7 +122,7 @@ function makeArray(elStart,elFinish,step){
 		while(elStart>=elFinish){
 			Arr[i] = elStart;
 			i++;
-			elStart = elStart + step;
+			elStart+=step;
 		}	
 	}
 	
@@ -146,7 +162,7 @@ function mergeArrays(Arr1,Arr2){
 	for (i = 0; i < TotalArr.length; i++){
 		if (TotalArr.indexOf(TotalArr[i],i+1) > -1){
 			TotalArr.splice(i, 1);
-			i = i - 1;
+			i--;
 		}
 	}
 
