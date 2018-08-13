@@ -1,3 +1,4 @@
+
 // 1.	Подсчет Букв
 function countChar(Str,symb){
   var entrNum = 0, i = 0;
