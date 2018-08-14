@@ -13,7 +13,14 @@ function createFunctions(num){
   }
 };     
 
-// http://www.codewars.com/kata/a-function-within-a-function
+// http://www.codewars.com/kata/a-function-within-a-function - тесты прйдены на 100%
+function always (n) {
+  func = function(n){
+    return n;
+  };
+  return func.bind(null,n);
+}
+
 // http://www.codewars.com/kata/can-you-keep-a-secret
 // http://www.codewars.com/kata/using-closures-to-share-class-state
 // http://www.codewars.com/kata/a-chain-adding-function

@@ -15,7 +15,7 @@ function countChar(Str,symb){
 // 2.	Глубокое сравнение
 function deepCompare_old(Value1,Value2){
 	// проверка на типы
-	if (typeof(Value1) != typeof(Value2)){
+	if (typeof Value1 != typeof Value2){
 	  return false;
 	}
 	
@@ -45,15 +45,18 @@ function deepCompare_old(Value1,Value2){
 //2.	Глубокое сравнение
 function deepCompare(Value1,Value2){
 	// проверка на типы
-	if (typeof(Value1) != typeof(Value2)){
+	if (typeof Value1 != typeof Value2){
 	  return false;
 	}
 	
-	if (typeof(Value1) == 'object'){
+	if (typeof Value1 == 'object'){
 		for(var key in Value1) {
-			sr = deepCompare(Value1[key],Value2[key]);
-			return sr;
+			equal = deepCompare(Value1[key],Value2[key]);
+			if (!equal){
+				return false;
+			};
 		}
+		return true;
 	}else {
 		if(Value1 !== Value2){
 			return false;
