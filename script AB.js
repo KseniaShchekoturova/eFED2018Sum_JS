@@ -63,7 +63,7 @@ function deepCompare(Value1,Value2){
 		if(Value1 !== Value2){return false;}
 	}
 	
-	// если нигде не свалилось, то 
+	// если нигде не свалилось в ложь, то 
 	return true;
 };
 
