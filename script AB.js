@@ -72,7 +72,7 @@ function chessBoard(w,h){
   var i, j, Str = '', ch = false;
   for (i = 0; i < h; i++) {
     for (j = 0; j < w; j++) {
-		ch = ~ch;
+		ch = !ch;
 		if(ch){
 			// Str = Str + '#';
 			Str+='#';
@@ -83,7 +83,7 @@ function chessBoard(w,h){
     }
 	Str = Str + '\n';
 	if(w%2==0){
-		ch = ~ch;
+		ch = !ch;
 	}
   }
   return(Str);
